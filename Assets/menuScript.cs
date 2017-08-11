@@ -43,4 +43,45 @@ public class menuScript : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.Escape) && menuPanel.gameObject.activeSelf)
             menuPanel.gameObject.SetActive(false);
     }
+
+    void onGUI()
+    {
+        keyEvent = Event.current;
+        // called every frame, tags a key press event as the current event
+
+        if(keyEvent.isKey && waitingForKey)
+        {
+            // if a user presses a key this code block is executed
+            newKey = keyEvent.keyCode;
+            waitingForKey = false;
+        }
+    }
+
+    public void StartAssignment(string keyName)
+    {
+        // this will only execute if we're not already waiting for a key
+        // so you can't click on three buttons at a time for example
+        if (!waitingForKey)
+            StartCoroutine(AssignKey(keyName));
+    }
+
+    public void SendText(Text text)
+    {
+        buttonText = text;
+        // allow update text of the button that is clicked on
+    }
+
+    IEnumerator WaitForKey()
+    {
+        while (!keyEvent.isKey)
+            // basically an infinite while loop until user presses a key
+            yield return null;
+    }
+
+    public IEnumerator AssignKey(string keyName)
+    {
+        waitingForKey = true;
+        // stop the coroutine from executing until our user presses a key
+        yield return WaitForKey();
+    }
 }
