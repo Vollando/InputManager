@@ -801,7 +801,7 @@ GameObject:
   - component: {fileID: 746613102}
   - component: {fileID: 746613101}
   m_Layer: 5
-  m_Name: rightKey
+  m_Name: RightKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1070,7 +1070,7 @@ GameObject:
   - component: {fileID: 897289409}
   - component: {fileID: 897289408}
   m_Layer: 5
-  m_Name: jumpKey
+  m_Name: JumpKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1255,7 +1255,7 @@ GameObject:
   - component: {fileID: 1009046633}
   - component: {fileID: 1009046632}
   m_Layer: 5
-  m_Name: backwardKey
+  m_Name: BackwardKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1588,7 +1588,7 @@ GameObject:
   - component: {fileID: 1750484258}
   - component: {fileID: 1750484257}
   m_Layer: 5
-  m_Name: leftKey
+  m_Name: LeftKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1699,7 +1699,7 @@ GameObject:
   - component: {fileID: 1846962115}
   - component: {fileID: 1846962114}
   m_Layer: 5
-  m_Name: forwardKey
+  m_Name: ForwardKey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1762,7 +1762,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1846962115}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 114197425}
+        m_MethodName: SendText
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 875737830}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: forward
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 114197425}
+        m_MethodName: StartAssignment
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: forward
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1846962115
